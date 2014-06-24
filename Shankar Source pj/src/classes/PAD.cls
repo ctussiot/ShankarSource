@@ -17,7 +17,7 @@ public class PAD {
     public static final String userProfileName;
     
     static {
-        System.Debug('##>>> PAD2 constructor : BEGIN <<< run by ' + UserInfo.getName());
+        System.Debug('##>>> PAD constructor : BEGIN <<< run by ' + UserInfo.getName());
         User user = [SELECT UserRole.Name, Profile.Name, UserPreferencesApexPagesDeveloperMode, Bypass_Apex_Triggers__c FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
         PAD_BypassTrigger = ';'+user.Bypass_Apex_Triggers__c+';';
         PAD_DebugMode = user.UserPreferencesApexPagesDeveloperMode;
